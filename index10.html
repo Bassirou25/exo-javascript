@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Demande un chiffre entre 1 et 7. 2. Utilise switch pour afficher le jour correspondant (1 = Lundi … 7 = Dimanche).
+
+      let day = parseInt(prompt("Entrez un chiffre entre 1 et 7 : "));
+      switch (day) {
+        case 1:
+          console.log("lundi");
+          break;
+        case 2:
+          console.log("Mardi");
+          break;
+        case 3:
+          console.log("Mercredi");
+          break;
+        case 4:
+          console.log("Jeudi");
+          break;
+        case 5:
+          console.log("Vendredi");
+          break;
+        case 6:
+          console.log("Samedi");
+          break;
+        case 7:
+          console.log("Dimanche");
+          break;
+        default:
+          console.log(
+            "Chiffre invalide. Veuillez entrer un chiffreentre 1 et 7."
+          );
+      }
+    </script>
+  </body>
+</html>

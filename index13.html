@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+const form = document.getElementById("noteForm");
+const tableau = document.getElementById("resultatTable");
+
+    form.addEventListener("submit"), function(e) {
+      e.preventDefault();
+
+      const matiere = document.getElementById("matiere").value;
+      const devoir = parseFloat(document.getElementById("devoir").value);
+      const examen = parseFloat(document.getElementById("examen").value);
+
+      // Calcul note finale
+      const finale = (devoir * 0.4) + (examen * 0.6);
+
+      // Déterminer appréciation
+      let appreciation = "";
+      if (finale >= 16) {
+        appreciation = "Excellent";
+      } else if (finale >= 14) {
+        appreciation = "Très Bien";
+      } else if (finale >= 12) {
+        appreciation = "Bien";
+      } else if (finale >= 10) {
+        appreciation = "Passable";
+      } else {
+        appreciation = "Faible";
+      }
+
+      // Ajouter dans le tableau
+      const ligne = document.createElement("tr");
+      ligne.innerHTML = `
+        <td>${matiere}</td>
+        <td>${devoir}</td>
+        <td>${examen}</td>
+        <td>${finale.toFixed(2)}</td>
+        <td>${appreciation}</td>
+     `;
+
+      tableau.appendChild(ligne);
+
+      // Réinitialiser formulaire
+      form.reset();
+    };
+
+    </script>
+  </body>
+</html>
